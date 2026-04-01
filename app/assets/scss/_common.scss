@@ -1,31 +1,63 @@
 // -----------------------------------------------------------------------------
-//  font-wight
-// -----------------------------------------------------------------------------
-$thin: 100;
-$ELight: 200;
-$light: 300;
-$regular: 400;
-$medium: 500;
-$SBold: 600;
-$bold: 700;
-$EBold: 800;
-$black: 900;
-// -----------------------------------------------------------------------------
-//  固有変数定義
+//  Variables
 // -----------------------------------------------------------------------------
 
-// フォント
-$font-modak: 'Modak', system-ui;
+// Font Weight
+$thin:    100;
+$ELight:  200;
+$light:   300;
+$regular: 400;
+$medium:  500;
+$SBold:   600;
+$bold:    700;
+$EBold:   800;
+$black:   900;
+
+// Fonts
+$font-modak:   'Modak', system-ui;
 $font-bentham: 'Bentham', Georgia, serif;
 
-// カラー
-// $color-primary: #333333;
-// $color-accent:  #ff6b6b;
+// Colors
 $color-bg:      #F0EEE9;
 $color-white:   #ffffff;
 $color-border:  #eeeeee;
 $color-text:    #333333;
 
 // -----------------------------------------------------------------------------
-//  固有スタイル定義
+//  Global Styles
 // -----------------------------------------------------------------------------
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .7;
+  visibility: visible;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}

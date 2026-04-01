@@ -37,7 +37,7 @@ const monthName = monthNames[month - 1]
 </script>
 
 <template>
-  <main class="main">
+  <main class="main" :class="`month-${month}`">
     <div class="container">
       <header class="page-header">
         <NuxtLink :to="`/`" class="back">&#8592;</NuxtLink>
@@ -71,7 +71,7 @@ const monthName = monthNames[month - 1]
 
 <style lang="scss" scoped>
 .main {
-  background-color: $color-bg;
+  // background-color: $color-bg;
   min-height: 100vh;
 }
 
@@ -167,5 +167,57 @@ const monthName = monthNames[month - 1]
     z-index: 1;
     @include mq() { font-size: getVw(12); }
   }
+}
+// =====================================================================
+// 月別デザイン
+// =====================================================================
+
+// 1月 - JAN
+.main.month-1 {
+  background-color: #d2d5ea;
+}
+
+// 2月 - FEB
+.main.month-2 {
+}
+
+// 3月 - MAR
+.main.month-3 {
+}
+
+// 4月 - APR
+.main.month-4 {
+}
+
+// 5月 - MAY
+.main.month-5 {
+}
+
+// 6月 - JUN
+.main.month-6 {
+}
+
+// 7月 - JUL
+.main.month-7 {
+}
+
+// 8月 - AUG
+.main.month-8 {
+}
+
+// 9月 - SEP
+.main.month-9 {
+}
+
+// 10月 - OCT
+.main.month-10 {
+}
+
+// 11月 - NOV
+.main.month-11 {
+}
+
+// 12月 - DEC
+.main.month-12 {
 }
 </style>

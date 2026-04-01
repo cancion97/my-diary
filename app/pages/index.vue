@@ -14,6 +14,7 @@ const items = computed(() =>
 
 <template>
   <main class="main">
+    <div class="bg"></div>
     <div class="container">
       <h1 class="heading">
         <NuxtImg src="/images/365.svg" alt="365" class="logo"/>
