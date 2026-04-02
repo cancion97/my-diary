@@ -651,7 +651,7 @@ if (month === 6) {
 
 // 6月 - JUN
 .main.month-6 {
-  background: linear-gradient(0deg, #89cbc1 0%, #9ddbe6 40%, #c7dce7 80%);
+  background: linear-gradient(0deg, #e4baef 0%, #9cd3dc 40%, #c7dce7 80%);
   font-family: $font-nunito;
   color: #28536e;
 
@@ -781,51 +781,50 @@ if (month === 6) {
 
 // 8月 - AUG
 .main.month-8 {
-  // background-color: ;
+  background: linear-gradient(0deg, #0f71ab 0%,  #14a8e3 100%);
+  color: #f9a94e;
+  font-family: $font-caprasimo;ß
 
-  // .back {
-  //   color: ;
-  // }
+  .page-header {
+    margin-bottom: 16px;
+  }
 
-  // .year-label {
-  //   font-family: ;
-  //   font-size: 16px;
-  //   color: ;
-  //   @include mq() { font-size: 12px; }
-  // }
+  .back {
+    color: #f9a94e;
+  }
 
-  // .month-num-bg {
-  //   font-family: ;
-  //   font-size: getVw(120, 1440);
-  //   color: ;
-  //   @include mq() { font-size: getVw(80); }
-  // }
+  .year-label {
+    font-size: 16px;
+    @include mq() { font-size: 12px; }
+  }
 
-  // .month-name {
-  //   font-family: ;
-  //   font-size: getVw(40, 1440);
-  //   color: ;
-  //   @include mq() { font-size: getVw(24); }
-  // }
+  .month-num-bg {
+    font-size: getVw(120, 1440);
+    color: #2093e5;
+    @include mq() { font-size: getVw(80); }
+  }
 
-  // .wd {
-  //   font-family: ;
-  //   color: ;
-  // }
+  .month-name {
+    font-size: getVw(56, 1440);
+    @include mq() { font-size: getVw(32); }
+  }
 
-  // .circle {
-  //   border-color: ;
-  // }
+  .wd {
+    color: #f9a94e;
+  }
 
-  // .day-num {
-  //   font-family: ;
-  //   color: ;
-  // }
+  .circle {
+    border-color: #f9a94e;
+  }
+
+  .day-num {
+    color: #f9a94e;
+  }
 }
 
 // 9月 - SEP
 .main.month-9 {
-  // background-color: ;
+  background: linear-gradient(0deg, #b63714 0%, #f1e466 100%);
 
   // .back {
   //   color: ;
