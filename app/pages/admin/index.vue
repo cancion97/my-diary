@@ -85,6 +85,7 @@ const handleSubmit = async () => {
     // dataURLをBlobに変換
     const res = await fetch(croppedPreviewUrl.value)
     const blob = await res.blob()
+    console.log('blob type:', blob.type, 'size:', blob.size)
     const formData = new FormData()
     formData.append('file', blob, 'image.jpg')
 
