@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, resolveComponent } from 'vue'
 
 const route = useRoute()
 const year = Number(route.params.year)
@@ -31,6 +31,8 @@ const firstDayOfWeek = computed(() => new Date(year, month - 1, 1).getDay())
 const days = computed(() =>
   Array.from({ length: daysInMonth.value }, (_, i) => i + 1)
 )
+
+const NuxtLinkComponent = resolveComponent('NuxtLink')
 
 // 月名
 const monthNamesShort = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
@@ -118,7 +120,7 @@ if (month === 6) {
 
       <div class="calendar">
         <component
-          :is="entryMap.has(day) ? 'NuxtLink' : 'div'"
+          :is="entryMap.has(day) ? NuxtLinkComponent : 'div'"
           v-for="day in days"
           :key="day"
           :to="entryMap.has(day) ? `/${year}/${month}/${day}` : undefined"
