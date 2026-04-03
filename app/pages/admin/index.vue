@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue'
-
-const Cropper = defineAsyncComponent(() =>
-  import('vue-advanced-cropper').then(m => ({ default: m.Cropper }))
-)
-
+import { Cropper } from 'vue-advanced-cropper'
 import 'vue-advanced-cropper/dist/style.css'
 
 definePageMeta({ layout: false })
@@ -189,12 +184,14 @@ const handleLogout = () => {
               {{ opt.label }}
             </button>
           </div>
+          <ClientOnly>
           <Cropper
-            ref="cropperRef"
-            :src="rawImageSrc"
-            :stencil-props="{ aspectRatio: selectedRatio }"
+          ref="cropperRef"
+          :src="rawImageSrc"
+          :stencil-props="{ aspectRatio: selectedRatio }"
             class="admin__cropper"
-          />
+            />
+          </ClientOnly>
           <div class="admin__cropper-actions">
             <button class="admin__cropper-cancel" @click="cancelCrop">キャンセル</button>
             <button class="admin__cropper-apply" @click="applyCrop">決定</button>
