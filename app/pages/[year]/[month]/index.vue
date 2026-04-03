@@ -279,8 +279,8 @@ if (month === 6) {
     border: 0.5px solid $color-text;
     overflow: hidden;
     @include mq() {
-      width: 35px;
-      height: 35px;
+      width: 38px;
+      height: 38px;
     }
   }
 
