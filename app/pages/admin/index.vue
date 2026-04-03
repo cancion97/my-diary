@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { Cropper } from 'vue-advanced-cropper'
+import { defineAsyncComponent } from 'vue'
+
+const Cropper = defineAsyncComponent(() =>
+  import('vue-advanced-cropper').then(m => ({ default: m.Cropper }))
+)
+
 import 'vue-advanced-cropper/dist/style.css'
 
 definePageMeta({ layout: false })
