@@ -105,7 +105,7 @@ const items = computed(() =>
   background-color: $color-text;
   gap: 0.5px;
   grid-template-columns: repeat(4, 1fr);
-  @include mq() { grid-template-columns: repeat(3, 1fr); }
+  @include mq() { grid-template-columns: repeat(3, 1fr); gap: 0.5px;}
 }
 
 .grid-wrapper li {
