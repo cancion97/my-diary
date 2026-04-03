@@ -51,16 +51,20 @@ const onFileChange = (e: Event) => {
 const croppedPreviewUrl = ref('')
 
 const applyCrop = () => {
-  if (!cropperRef.value) {
-    console.error('cropperRef is null')
-    return
-  }
+  if (!cropperRef.value) return
   const { canvas } = cropperRef.value.getResult()
-  if (!canvas) {
-    console.error('canvas is null')
-    return
-  }
-  croppedPreviewUrl.value = canvas.toDataURL('image/jpeg', 0.92)
+  if (!canvas) return
+
+  // 最大幅1200pxにリサイズ
+  const maxWidth = 1200
+  const scale = Math.min(1, maxWidth / canvas.width)
+  const resized = document.createElement('canvas')
+  resized.width = Math.round(canvas.width * scale)
+  resized.height = Math.round(canvas.height * scale)
+  const ctx = resized.getContext('2d')!
+  ctx.drawImage(canvas, 0, 0, resized.width, resized.height)
+
+  croppedPreviewUrl.value = resized.toDataURL('image/jpeg', 0.85)
   showCropper.value = false
 }
 

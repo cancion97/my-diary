@@ -105,7 +105,7 @@ if (month === 6) {
       </template>
 
       <div v-if="month === 1" class="snow">
-        <div v-for="i in 150" :key="i" class="flake" />
+        <div v-for="i in 80" :key="i" class="flake" />
       </div>
 
       <div v-if="month === 4" class="sakura">
