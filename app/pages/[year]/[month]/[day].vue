@@ -286,8 +286,8 @@ const formatDate = (str: string) => {
 
 .day-page__img {
   width: 100%;
-  max-height: 480px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
