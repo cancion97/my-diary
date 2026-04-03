@@ -80,6 +80,8 @@ const handleSubmit = async () => {
   loading.value = true
 
   try {
+    console.log('croppedPreviewUrl length:', croppedPreviewUrl.value.length)
+    console.log('croppedPreviewUrl prefix:', croppedPreviewUrl.value.substring(0, 50))
     // dataURLをBlobに変換
     const res = await fetch(croppedPreviewUrl.value)
     const blob = await res.blob()
