@@ -4,9 +4,10 @@ import { computed, onMounted, ref } from 'vue'
 const route = useRoute()
 const year = Number(route.params.year)
 const month = Number(route.params.month)
+const { apiBase } = useAuth()
 
 // その月の投稿データを取得
-const { data: entries } = await useFetch(`http://localhost:5159/diaries/${year}/${month}`, {
+const { data: entries } = await useFetch(`${apiBase}/diaries/${year}/${month}`, {
   server: false,
   default: () => [],
 })
@@ -824,46 +825,41 @@ if (month === 6) {
 
 // 9月 - SEP
 .main.month-9 {
-  background: linear-gradient(0deg, #b63714 0%, #f1e466 100%);
+  background-color: #997f9f;
+  font-family: $font-knewave;
+  color: $color-bg;
 
-  // .back {
-  //   color: ;
-  // }
+  .back {
+    color: $color-bg;
+  }
 
-  // .year-label {
-  //   font-family: ;
-  //   font-size: 16px;
-  //   color: ;
-  //   @include mq() { font-size: 12px; }
-  // }
+  .year-label {
+    font-size: 16px;
+    @include mq() { font-size: 12px; }
+  }
 
-  // .month-num-bg {
-  //   font-family: ;
-  //   font-size: getVw(120, 1440);
-  //   color: ;
-  //   @include mq() { font-size: getVw(80); }
-  // }
+  .month-num-bg {
+    font-size: getVw(120, 1440);
+    color: #bca3c2;
+    @include mq() { font-size: getVw(80); }
+  }
 
-  // .month-name {
-  //   font-family: ;
-  //   font-size: getVw(40, 1440);
-  //   color: ;
-  //   @include mq() { font-size: getVw(24); }
-  // }
+  .month-name {
+    font-size: getVw(40, 1440);
+    @include mq() { font-size: getVw(24); }
+  }
 
-  // .wd {
-  //   font-family: ;
-  //   color: ;
-  // }
+  .wd {
+    color: $color-bg;
+  }
 
-  // .circle {
-  //   border-color: ;
-  // }
+  .circle {
+    border-color: $color-bg;
+  }
 
-  // .day-num {
-  //   font-family: ;
-  //   color: ;
-  // }
+  .day-num {
+    color: $color-bg;
+  }
 }
 
 // 10月 - OCT
