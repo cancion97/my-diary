@@ -28,8 +28,8 @@ export default defineNuxtConfig({
           crossorigin: '',
         },
         {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Bentham&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Modak&family=Caprasimo&family=Knewave&family=Limelight&family=Moirai+One&family=Noto+Sans+JP:wght@400;500&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap',
+          rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bentham&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Modak&family=Caprasimo&family=Knewave&family=Limelight&family=Moirai+One&family=Noto+Sans+JP:wght@400;500&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Diplomata&display=swap',
+         
         },
       ],
     },

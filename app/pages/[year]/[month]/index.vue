@@ -434,7 +434,7 @@ if (month === 6) {
 // 3月 - MAR
 .main.month-3 {
   background-color: #cae0d0;
-  font-family: $font-limelight;
+  font-family: $font-diplomata;
   color: #835151;
 
   .page-header {
@@ -451,19 +451,20 @@ if (month === 6) {
   }
 
   .month-num-bg {
-    font-size: getVw(120, 1440);
+    font-size: getVw(90, 1440);
     color: rgb(124, 185, 133);
     margin-top: 18px;
-    @include mq() { font-size: getVw(80); }
+    @include mq() { font-size: getVw(60); }
   }
 
   .month-name {
-    font-size: getVw(48, 1440);
-    @include mq() { font-size: getVw(32); }
+    font-size: getVw(40, 1440);
+    @include mq() { font-size: getVw(24); }
   }
 
   .wd {
     color: #835151;
+    @include mq() { font-size: getVw(7); letter-spacing: -.1; }
   }
 
   .circle {

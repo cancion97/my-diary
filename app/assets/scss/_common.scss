@@ -23,6 +23,7 @@ $font-moirai:   'Moirai One', system-ui;
 $font-nunito:   'Nunito', sans-serif;
 $font-noto:     'Noto Sans JP', sans-serif;
 $font-crimson:  'Crimson Text', serif;
+$font-diplomata: "Diplomata", serif;
 
 // Colors
 $color-bg:      #F0EEE9;
@@ -45,7 +46,7 @@ body {
   right: -50%;
   bottom: -50%;
   width: 200%;
-  height: 200vh;
+  height: 200lvh;
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
