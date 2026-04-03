@@ -51,9 +51,16 @@ const onFileChange = (e: Event) => {
 const croppedPreviewUrl = ref('')
 
 const applyCrop = () => {
-  const result = cropperRef.value.getResult()
-  if (!result || !result.canvas) return
-  croppedPreviewUrl.value = result.canvas.toDataURL('image/jpeg', 0.92)
+  if (!cropperRef.value) {
+    console.error('cropperRef is null')
+    return
+  }
+  const { canvas } = cropperRef.value.getResult()
+  if (!canvas) {
+    console.error('canvas is null')
+    return
+  }
+  croppedPreviewUrl.value = canvas.toDataURL('image/jpeg', 0.92)
   showCropper.value = false
 }
 
@@ -184,14 +191,12 @@ const handleLogout = () => {
               {{ opt.label }}
             </button>
           </div>
-          <ClientOnly>
           <Cropper
-          ref="cropperRef"
-          :src="rawImageSrc"
-          :stencil-props="{ aspectRatio: selectedRatio }"
+            ref="cropperRef"
+            :src="rawImageSrc"
+            :stencil-props="{ aspectRatio: selectedRatio }"
             class="admin__cropper"
-            />
-          </ClientOnly>
+          />
           <div class="admin__cropper-actions">
             <button class="admin__cropper-cancel" @click="cancelCrop">キャンセル</button>
             <button class="admin__cropper-apply" @click="applyCrop">決定</button>
