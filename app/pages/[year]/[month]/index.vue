@@ -117,10 +117,11 @@ if (month === 6) {
       </div>
 
       <div class="calendar">
-        <NuxtLink
+        <component
+          :is="entryMap.has(day) ? 'NuxtLink' : 'div'"
           v-for="day in days"
           :key="day"
-          :to="`/${year}/${month}/${day}`"
+          :to="entryMap.has(day) ? `/${year}/${month}/${day}` : undefined"
           class="day-cell"
           :class="{ 'has-photo': entryMap.has(day) }"
           :style="day === 1 ? { gridColumnStart: firstDayOfWeek + 1 } : {}"
@@ -134,7 +135,7 @@ if (month === 6) {
             />
           </div>
           <span class="day-num">{{ day }}</span>
-        </NuxtLink>
+        </component>
       </div>
     </div>
   </main>
@@ -265,7 +266,8 @@ if (month === 6) {
   align-items: center;
   gap: 6px;
 
-  &:hover { opacity: 0.8; }
+  &[href]:hover { opacity: 0.8; }
+  &:not([href]) { cursor: default; }
 
   .circle {
     position: relative;
